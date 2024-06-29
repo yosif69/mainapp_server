@@ -23,6 +23,25 @@ const login = async (req, res) => {
   }
 };
 
+const updateOneUser =async (req,res)=>{
+  const {name,updatedUser}=req.body
+  const user = await USER_MODEL.updateOne({name},updatedUser).catch((e) =>
+    res.status(500).json({ error: true, errorMessage: e.message })
+  );
+  if (user) {
+    res.status(200).json({user});
+    return;
+  }else{
+    res.status(550).json({ error: true, errorMessage: "no user" });
+  }
+}
+
+const test =async (req,res)=>{
+  res.status(200).json({test: "test",});
+}
+
 module.exports = {
   login,
+  updateOneUser,
+  test
 };

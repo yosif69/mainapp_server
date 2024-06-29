@@ -6,9 +6,11 @@ const express = require("express");
 var cors = require("cors");
 const mongoose = require ("mongoose");
 const USER_MODEL = require("./API/models/user.model");
+const Routes = require("./API/routes/Routes");
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use("/", Routes);
 
 const mongooseLink = "mongodb+srv://yosifmatar123:Qweasd556677@cluster0.2sa3jfw.mongodb.net/"
 
