@@ -1,9 +1,10 @@
 const { Router } = require("express");
-const { createpordact } = require("../controller/ControllerProdact");
+const { createpordact , getAllpordact} = require("../controller/ControllerProdact");
 
 const prodactRoutes = Router();
 
-prodactRoutes.post("/createpordact", createpordact)
+prodactRoutes.post("/createpordact")
+prodactRoutes.post("/", getAllpordact)
 // userRouter.post("/login", (req , res) =>  login(req , res));
 
 module.exports = prodactRoutes;

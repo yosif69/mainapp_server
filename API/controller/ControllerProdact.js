@@ -61,6 +61,17 @@ const login = async (req, res) => {
           });
         });
     };
+    const  getAllpordact = (req, res) => {
+      prodact_MODEL.find({name:"yo"})
+        .then((users) => {
+          res.status(200).json({ users });
+        })
+        .catch((e) =>
+          res.status(500)
+        .json({ error: true, errorMessage: e.message })
+        );
+    };
+  
 
     
   
@@ -69,4 +80,7 @@ const login = async (req, res) => {
     updateOneUser,
     test,
     createpordact,
+    getAllpordact,
+    
+  
   };
