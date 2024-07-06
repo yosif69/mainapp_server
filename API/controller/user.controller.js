@@ -40,8 +40,34 @@ const test =async (req,res)=>{
   res.status(200).json({test: "test",});
 }
 
+ const ceateNewUser =  (req, res) => {
+  const { phone, name,  age, userName ,pass, points, } = req.body;
+  
+    USER_MODEL.create({
+      phone: phone,
+      name: name,
+     age,
+     points,
+     userName,
+     pass,
+
+    })
+    .then((createRes) => {
+        res.status(200).json({
+          user: createRes._doc,
+        });
+      })
+      .catch((e) => {
+        res.status(500).json({
+          error: true,
+          errorMessage: e.message,
+        });
+      });
+  };
+
 module.exports = {
   login,
   updateOneUser,
-  test
+  test,
+  ceateNewUser,
 };

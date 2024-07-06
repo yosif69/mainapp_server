@@ -13,7 +13,7 @@ const userSchema = new Schema({
   },
   userName: String,
   pass: String,
-});
+}); 
 
 const USER_MODEL = model("user", userSchema);
 
