@@ -60,7 +60,7 @@ const login = async (req, res) => {
         });
     };
     const  getAllpordact = (req, res) => {
-      prodactHoodie_MODEL.findOne()
+      prodactHoodie_MODEL.find()
         .then((users) => {
           res.status(200).json({ users });
         })
