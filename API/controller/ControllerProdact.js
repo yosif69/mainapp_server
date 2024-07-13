@@ -62,7 +62,7 @@ const login = async (req, res) => {
         });
     };
     const  getAllpordact = (req, res) => {
-      prodact_MODEL.find({name:"yo"})
+      prodact_MODEL.find()
         .then((users) => {
           res.status(200).json({ users });
         })

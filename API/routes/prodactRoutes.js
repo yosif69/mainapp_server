@@ -3,7 +3,7 @@ const { createpordact , getAllpordact} = require("../controller/ControllerProdac
 
 const prodactRoutes = Router();
 
-prodactRoutes.post("/getAllpordact", getAllpordact);
+prodactRoutes.get("/getAllpordact", getAllpordact);
 prodactRoutes.post("/createpordact", createpordact  )
 // userRouter.post("/login", (req , res) =>  login(req , res));
 
