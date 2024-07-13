@@ -65,16 +65,16 @@ app.post("/ceateNewUser", (req, res) => {
 
 
 
-  app.get("/getAllUsers", (req, res) => {
-    USER_MODEL.find({name:"yosif"})
-      .then((users) => {
-        res.status(200).json({ users });
-      })
-      .catch((e) =>
-        res.status(500)
-      .json({ error: true, errorMessage: e.message })
-      );
-  });
+  // app.get("/getAllUsers", (req, res) => {
+  //   USER_MODEL.find({name:"yosif"})
+  //     .then((users) => {
+  //       res.status(200).json({ users });
+  //     })
+  //     .catch((e) =>
+  //       res.status(500)
+  //     .json({ error: true, errorMessage: e.message })
+  //     );
+  // });
 
 
 

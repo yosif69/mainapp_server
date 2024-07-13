@@ -1,11 +1,11 @@
-const prodact_MODEL = require("../models/prodact.model");
+const prodactHoodie_MODEL = require("../models/prodactHoodie");
 
 const login = async (req, res) => {
     const {  Size, price } = req.body;
       // const userName = req.body.userName;
     //   const pass = req.body.pass;
   
-    const user = await prodact_MODEL.findOne({ userName: Size }).catch((e) =>
+    const user = await prodactHoodie_MODEL.findOne({ userName: Size }).catch((e) =>
       res.status(500).json({ error: true, errorMessage: e.message })
     );
   
@@ -36,13 +36,11 @@ const login = async (req, res) => {
     }
   }
   
-  const test =async (req,res)=>{
-    res.status(200).json({test: "test",});
-  }
+ 
   const createpordact =  (req, res) => {
     const {  name,Size,  price  ,  } = req.body;
     
-    prodact_MODEL.create({
+    prodactHoodie_MODEL.create({
         name: name,
         Size:Size,
         price,
@@ -62,7 +60,7 @@ const login = async (req, res) => {
         });
     };
     const  getAllpordact = (req, res) => {
-      prodact_MODEL.find()
+      prodactHoodie_MODEL.findOne()
         .then((users) => {
           res.status(200).json({ users });
         })
@@ -78,9 +76,6 @@ const login = async (req, res) => {
   module.exports = {
     login,
     updateOneUser,
-    test,
     createpordact,
     getAllpordact,
-    
-  
   };
