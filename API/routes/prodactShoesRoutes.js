@@ -1,9 +1,9 @@
 const { Router } = require("express");
 const { prodactShoes, getAllShoes} = require("../controller/ControllerprodactShoes");
 
-const prodactRoutes = Router();
+const prodactShoesRoutes = Router();
 
-prodactRoutes.get("/getAllShoes", getAllShoes);
-prodactRoutes.post("/prodactShoes", prodactShoes  )
+prodactShoesRoutes.get("/getAllShoes", getAllShoes);
+prodactShoesRoutes.post("/prodactShoes", prodactShoes  )
 
-module.exports = prodactRoutes; 
+module.exports = prodactShoesRoutes; 

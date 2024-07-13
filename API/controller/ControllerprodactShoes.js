@@ -49,7 +49,7 @@ const login = async (req, res) => {
       })
       .then((createRes) => {
           res.status(200).json({
-            prodact: createRes._doc,
+            prodactShoes: createRes._doc,
           });
         })
         .catch((e) => {
@@ -60,15 +60,15 @@ const login = async (req, res) => {
         });
     };
     const  getAllShoes = (req, res) => {
-      prodactShoes_MODEL.find()
-        .then((users) => {
-          res.status(200).json({ users });
-        })
-        .catch((e) =>
-          res.status(500)
-        .json({ error: true, errorMessage: e.message })
-        );
-    };
+        prodactShoes_MODEL.find()
+          .then((Shoes) => {
+            res.status(200).json({ Shoes });
+          })
+          .catch((e) =>
+            res.status(500)
+          .json({ error: true, errorMessage: e.message })
+          );
+      };
   
 
     
