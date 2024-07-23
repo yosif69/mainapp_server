@@ -39,7 +39,7 @@ const login = async (req, res) => {
   const test =async (req,res)=>{
     res.status(200).json({test: "test",});
   }
-  const createpordact =  (req, res) => {
+  const pordactHoodie =  (req, res) => {
     const {  name,Size,  price  ,  } = req.body;
     
     prodactHoodie_MODEL.create({
@@ -79,7 +79,7 @@ const login = async (req, res) => {
     login,
     updateOneUser,
     test,
-    createpordact,
+     pordactHoodie,
      getAllHoodie,
     
   
