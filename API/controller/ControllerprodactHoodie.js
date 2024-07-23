@@ -36,13 +36,15 @@ const login = async (req, res) => {
     }
   }
   
- 
+  const test =async (req,res)=>{
+    res.status(200).json({test: "test",});
+  }
   const createpordact =  (req, res) => {
     const {  name,Size,  price  ,  } = req.body;
     
     prodactHoodie_MODEL.create({
-        name: name,
-        Size:Size,
+         name,
+        Size,
         price,
        
   
@@ -59,10 +61,10 @@ const login = async (req, res) => {
           });
         });
     };
-    const  getAllpordact = (req, res) => {
+    const  getAllHoodie = (req, res) => {
       prodactHoodie_MODEL.find()
-        .then((users) => {
-          res.status(200).json({ users });
+        .then((hoodie) => {
+          res.status(200).json({ hoodie });
         })
         .catch((e) =>
           res.status(500)
@@ -76,6 +78,9 @@ const login = async (req, res) => {
   module.exports = {
     login,
     updateOneUser,
+    test,
     createpordact,
-    getAllpordact,
+     getAllHoodie,
+    
+  
   };

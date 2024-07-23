@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const prodactShoes = new Schema({
+const prodactShoesSchema = new Schema({
   name: String,
   price: Number,
   Size: {

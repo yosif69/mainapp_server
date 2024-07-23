@@ -1,4 +1,4 @@
-const prodactShoes_MODEL = require("../models/prodactHoodie");
+const prodactShoes_MODEL = require("../models/prodactShoes");
 
 const login = async (req, res) => {
     const {  Size, price } = req.body;
@@ -34,6 +34,10 @@ const login = async (req, res) => {
     }else{
       res.status(550).json({ error: true, errorMessage: "no user" });
     }
+  }
+
+  const test =async (req,res)=>{
+    res.status(200).json({test: "test",});
   }
   
  
@@ -77,5 +81,6 @@ const login = async (req, res) => {
     login,
     updateOneUser,
     prodactShoes,
+    test,
     getAllShoes,
   };
