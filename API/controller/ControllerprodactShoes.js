@@ -66,7 +66,10 @@ const login = async (req, res) => {
     const  getAllShoes = (req, res) => {
         prodactShoes_MODEL.find()
           .then((Shoes) => {
-            res.status(200).json({ Shoes });
+            res.status(200).json({ 
+              type:"shoes",
+              data:Shoes
+             });
           })
           .catch((e) =>
             res.status(500)
