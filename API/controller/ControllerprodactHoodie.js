@@ -64,7 +64,7 @@ const login = async (req, res) => {
     const  getAllHoodie = (req, res) => {
       prodactHoodie_MODEL.find()
         .then((hoodie) => {
-          res.status(200).json({ hoodie });
+          res.status(200).json({ hoodies:hoodie });
         })
         .catch((e) =>
           res.status(500)
