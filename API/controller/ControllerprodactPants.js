@@ -1,4 +1,4 @@
-const prodactPants_MODEL = require("../models/prodactShoes");
+const prodactPants_MODEL = require("../models/prodactPants");
 
 const login = async (req, res) => {
     const {  Size, price } = req.body;
