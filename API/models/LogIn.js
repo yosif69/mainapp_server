@@ -1,10 +1,5 @@
 const { Schema, model } = require("mongoose");
-const bcrypt = require('bcryptjs');
-
-// استخدم نفس الدوال الموجودة في bcrypt
-bcrypt.hash(password, saltRounds, function(err, hash) {
-    // احفظ كلمة المرور المشفرة في قاعدة البيانات
-});
+// const bcrypt = require('bcryptjs');
 
 const LogInSchema = new Schema({
   email: {
