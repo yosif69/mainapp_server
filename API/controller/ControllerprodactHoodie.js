@@ -82,8 +82,8 @@ const login = async (req, res) => {
     login,
     updateOneUser,
     test,
-     pordactHoodie,
-     getAllHoodie,
+    pordactHoodie,
+    getAllHoodie,
     
   
   };
