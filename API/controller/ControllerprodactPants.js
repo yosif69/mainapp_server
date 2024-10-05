@@ -25,7 +25,21 @@ const login = async (req, res) => {
   
   const updateOneUser =async (req,res)=>{
     const {name,updatedUser}=req.body
-    const user = await USER_MODEL.updateOne({name},updatedprodact).catch((e) =>
+    const user = await prodactPants_MODEL.updateOne({name},updatedprodact).catch((e) =>
+      res.status(500).json({ error: true, errorMessage: e.message })
+    );
+    if (user) {
+      res.status(200).json({user});
+      return;
+    }else{
+      res.status(550).json({ error: true, errorMessage: "no user" });
+    }
+  }
+
+  const updateManyPants =async (req,res)=>{
+    // const {name,updatedUser}=req.body
+    console.log(req.body);
+    const user = await prodactPants_MODEL.updateMany(req.body).catch((e) =>
       res.status(500).json({ error: true, errorMessage: e.message })
     );
     if (user) {
@@ -46,7 +60,7 @@ const login = async (req, res) => {
     
     prodactPants_MODEL.create({
         name: name,
-        Size:Size,
+        Size,
         price,
        
   
@@ -83,6 +97,7 @@ const login = async (req, res) => {
   module.exports = {
     login,
     updateOneUser,
+    updateManyPants,
      prodactPants,
     test,
     getAllPants,
