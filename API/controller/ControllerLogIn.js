@@ -47,7 +47,7 @@ const test = async (req, res) => {
 };
 
 // دالة إنشاء مستخدم جديد
-const LogIn = (req, res) => {
+const register = (req, res) => {
   const { email, userName, pass} = req.body;
 
   LogIn_MODEL.create({
@@ -79,7 +79,7 @@ const getAllLogIn = async (req, res) => {
 };
 
 module.exports = {
-  LogIn,
+  register,
   updateOneUser,
   login,
   test,

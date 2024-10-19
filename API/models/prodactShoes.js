@@ -4,7 +4,7 @@ const prodactShoesSchema = new Schema({
   name: String,
   price: Number,
   Size: {
-    type: Array,
+    type: Array, 
     required: true,
   },
   img: {

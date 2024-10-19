@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { LogIn, getAllLogIn, login } = require("../controller/ControllerLogIn");
+const { register, getAllLogIn, login } = require("../controller/ControllerLogIn");
 
 const LogInRoutes = Router();
 
@@ -10,6 +10,6 @@ LogInRoutes.get("/getAllLogIn", getAllLogIn);
 LogInRoutes.post("/login", login);
 
 // مسار إنشاء مستخدم جديد
-LogInRoutes.post("/createLogIn", LogIn);
+LogInRoutes.post("/register", register);
 
 module.exports = LogInRoutes;
