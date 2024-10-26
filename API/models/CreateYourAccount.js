@@ -5,7 +5,8 @@ const CreateYourAccountSchema = new Schema({
   email: {
     type: String,
     required: true,
-    unique: true, // التأكد من عدم تكرار نفس البريد الإلكتروني لكل مستخدم
+    unique: true,
+    match: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // التأكد من صحة تنسيق البريد الإلكتروني
   },
   userName: {
     type: String,
