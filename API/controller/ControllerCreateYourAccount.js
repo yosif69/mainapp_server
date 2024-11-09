@@ -26,10 +26,10 @@ const login = async (req, res) => {
 
 // دالة تحديث مستخدم
 const updateOneUser = async (req, res) => {
-  const { name, updatedUser } = req.body;
+  const { email, updatedUser } = req.body;
 
   try {
-    const user = await CreateYourAccount_MODEL.updateOne({ name }, updatedUser);
+    const user = await CreateYourAccount_MODEL.updateOne({ email }, updatedUser);
 
     if (user) {
       return res.status(200).json({ user });

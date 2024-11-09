@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { getAllUsers,login, CreateUser } = require("../controller/ControllerCreateYourAccount");
+const { getAllUsers,login, CreateUser, updateOneUser } = require("../controller/ControllerCreateYourAccount");
 
 const CreateYourAccountRoutes = Router();
 
@@ -11,5 +11,8 @@ CreateYourAccountRoutes.post("/login", login);
 
 // مسار إنشاء مستخدم جديد
 CreateYourAccountRoutes.post("/CreateUser", CreateUser);
+
+CreateYourAccountRoutes.post("/updateOneUser", updateOneUser);
+
 
 module.exports = CreateYourAccountRoutes;
